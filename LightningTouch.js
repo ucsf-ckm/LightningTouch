@@ -15,7 +15,7 @@
  * @module Lightning Touch
  * @author Rich Trott
  * @copyright Copyright (c) 2012 UC Regents
- * @version 0.99
+ * @version 1.0.0
  */
 
 /*global document: false, history: false, location: false, window: false */
