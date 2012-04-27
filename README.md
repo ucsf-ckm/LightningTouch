@@ -71,4 +71,4 @@ Lightning Touch is made available via the New BSD License.
 
 The copyright for Lightning Touch is owned by the Regents of the University of California. All rights reserved.
 
-Lightning Touch was written by Rich Trott at the UCSF Library and Center for Knowledge Management.  You can find him on Twitter: `@trott`
+Lightning Touch was written by Rich Trott at the [UCSF Library and Center for Knowledge Management](http://library.ucsf.edu).  You can find him on Twitter: [@trott](http://twitter.com/trott)
