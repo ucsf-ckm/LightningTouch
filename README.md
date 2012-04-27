@@ -47,7 +47,7 @@ That's it! You should have some really fast links on touch-enabled devices like 
 
 ## FAQ
 
-### How do I implement a fallback for browser's that can't do Lightning Touch?
+### How do I implement a fallback for browsers that can't do Lightning Touch?
 
 Browsers that do not work with Lightning Touch (e.g., Internet Explorer) will go to the URLs specified in the `href` attribute of the anchors as usual. This does mean you need to have your content available in two places. A template engine or other dynamic content generation mechanism can reduce or eliminate the need to repeat the content in two places.
 
