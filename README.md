@@ -53,7 +53,7 @@ Browsers that do not work with Lightning Touch (e.g., Internet Explorer) will go
 
 ### Doesn't using Lightning Touch mean every visitor to my site's main page will be downloading all the Lightning Touch-enabled content on every visit?
 
-Yes. Consider using [HTML5 offline appcaching](http://www.html5rocks.com/en/features/offline)  to mitigate the issue.
+Yes. Consider using [HTML5 offline appcaching](http://www.html5rocks.com/en/tutorials/appcache/beginner/)  to mitigate the issue.
 
 ### How do I track page loads via Lightning Touch using Google Analytics?
 
