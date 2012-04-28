@@ -51,6 +51,10 @@ That's it! You should have some really fast links on touch-enabled devices like 
 
 Browsers that do not work with Lightning Touch (e.g., Internet Explorer) will go to the URL specified in the `href` attribute of the anchor as usual. This does mean you need to have your content available in two places. A template engine or other dynamic content generation mechanism can reduce or eliminate the need to repeat the content in two places.
 
+### Doesn't using Lightning Touch mean every visitor to my site's main page will be downloading all the Lightning Touch-enabled content on every visit?
+
+Yes. Consider using [HTML5 offline appcaching](http://www.html5rocks.com/en/features/offline)  to mitigate the issue.
+
 ### How do I track page loads via Lightning Touch using Google Analytics?
 
 Add an event listener for `hashchange`:
