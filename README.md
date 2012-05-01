@@ -45,19 +45,19 @@ That's it! You should have some really fast links on touch-enabled devices like 
 
 * [UCSF Mobile](http://m.ucsf.edu/)
 
-## FAQ
+## Additional Usage Notes
 
-### How do I implement a fallback for browsers that can't do Lightning Touch?
+### Fallback
 
 Browsers that do not work with Lightning Touch (e.g., Internet Explorer) will go to the URL specified in the `href` attribute of the anchor as usual. This does mean you need to have your content available in two places. A template engine or other dynamic content generation mechanism can reduce or eliminate the need to repeat the content in two places.
 
-### Doesn't using Lightning Touch mean every visitor to my site's main page will be downloading all the Lightning Touch-enabled content on every visit?
+### Reducing Payload
 
-Yes. Consider using [HTML5 offline appcaching](http://www.html5rocks.com/en/tutorials/appcache/beginner/)  to mitigate the issue.
+Every visitor will load all the Lightning Touch-enabled content on every visit. Consider using [HTML5 offline appcaching](http://www.html5rocks.com/en/tutorials/appcache/beginner/) to mitigate the network payload.
 
-### How do I track page loads via Lightning Touch using Google Analytics?
+### Google Analytics
 
-Add an event listener for `hashchange`:
+To track Google Analytics Lightning Touch "page" loads, add an event listener for `hashchange`:
 
 ```
 window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash])}, false);
@@ -69,11 +69,30 @@ You can use `substr()` to strip off the hash mark and the prepended slash if you
 window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash.substr(2)])}, false);
 ```
 
-## Miscellania
+## License
 
-Lightning Touch is made available via the New BSD License.
+Copyright (c) 2012, Regents of the University of California
+All rights reserved.
 
-The copyright for Lightning Touch is owned by the Regents of the University of California. All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Neither the name of the University of California nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+## Notes
 
 Lightning Touch was written by Rich Trott at the [UCSF Library and Center for Knowledge Management](http://library.ucsf.edu).  You can find him on Twitter: [@trott](http://twitter.com/trott)
 
