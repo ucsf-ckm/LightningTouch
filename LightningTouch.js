@@ -15,7 +15,7 @@
  * @module Lightning Touch
  * @author Rich Trott
  * @copyright Copyright (c) 2012 UC Regents
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 /*global document: false, history: false, location: false, window: false */
@@ -169,7 +169,7 @@
         if (!location.hash) {
             location.hash = '#/' + defaultTargetId;
         }
-        showContent(location.hash.substring(2), []);
+        showContent(location.hash.substring(2), [defaultTargetId]);
 
         if (!(history instanceof Object && history.replaceState instanceof Function)) {
             return;
