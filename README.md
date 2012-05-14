@@ -16,11 +16,11 @@ To see it in action, check out the **Sites That Use Lightning Touch** section be
 
 * If your site has consistent header, footer, navigation, or other content that exists in its own block element, you can leave that stuff alone and it will appear on all the pages that result from Lightning Touch.
 * Take the main content of each of your pages and:
-   * Wrap it in a block element (e.g., `<div>`). Assign a value to the `id` attribute. Use inline style or a stylesheet to set `display:none`. (Shameful admission: I've only tested this extensively with inline styles. For stylesheets, my testing has been minimal. If you use it with stylesheets, let me know the results!)
+   * Wrap it in a block element (e.g., `<div>`). Assign a value to the `id` attribute. Use inline style or a stylesheet to set `display:none` unless the block is the default/main content. (Shameful admission: I've only tested this extensively with inline styles. For stylesheets, my testing has been minimal. If you use it with stylesheets, let me know the results!)
    * Take each anchor (`<a>`) element that you wish to Lightning Touch-enable and add a `data-target-id` indicating the `id` of the block element that anchor should link to. (Don't worry; `data-target-id` is a totally valid attribute in HTML5.)
 
 ```
-<div id="lightning-main" style="display:none">
+<div id="lightning-main">
   <h1>Lightning Touch</h1>
   <h2>Awesomeness!</h2>
   <a href="awesome.html" data-target-id="awesome">Tap for Lightning Touch!</a>
