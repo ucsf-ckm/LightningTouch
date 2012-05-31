@@ -166,7 +166,7 @@
             }
         }
 
-        if ((!location.hash) && (defaultTargetId!=='')) {
+        if ((!location.hash) && (defaultTargetId !== '')) {
             location.hash = '#/' + defaultTargetId;
         }
         showContent(location.hash.substring(2), [defaultTargetId]);
