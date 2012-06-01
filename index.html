@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lightning Touch by Trott</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Lightning Touch</h1>
+        <p>JavaScript utility to make web site navigation crazy-fast on touchscreen devices like iPhone, iPad, Android, and Blackberry.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Trott/LightningTouch" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Trott/LightningTouch/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Trott/LightningTouch/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>Lightning Touch</h1>
+
+<p>Lightning Touch makes links responsive without the several hundred millisecond delay typical in a hendheld touchscreen browser.</p>
+
+<p>To see it in action, check out the <strong>Sites That Use Lightning Touch</strong> section below.</p>
+
+<h2>Using Lightning Touch</h2>
+
+<ul>
+<li>Put <code>LightningTouch.js</code> (or better yet, the minified version in the <code>demo</code> directory) in a sensible place on your web server. </li>
+<li>In the web page that you wish to make Lightning Touch-enabled, link to the Lightning Touch JS file. For example:</li>
+</ul><pre><code>&lt;script async src="/js/LightningTouch.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li>If your site has consistent header, footer, navigation, or other content that exists in its own block element, you can leave that stuff alone and it will appear on all the pages that result from Lightning Touch.</li>
+<li>Take the main content of each of your pages and:
+
+<ul>
+<li>Wrap it in a block element (e.g., <code>&lt;div&gt;</code>). Assign a value to the <code>id</code> attribute. Use inline style or a stylesheet to set <code>display:none</code> unless the block is the default/main content. (Shameful admission: I've only tested this extensively with inline styles. For stylesheets, my testing has been minimal. If you use it with stylesheets, let me know the results!)</li>
+<li>Take each anchor (<code>&lt;a&gt;</code>) element that you wish to Lightning Touch-enable and add a <code>data-target-id</code> indicating the <code>id</code> of the block element that anchor should link to. (Don't worry; <code>data-target-id</code> is a totally valid attribute in HTML5.)</li>
+</ul>
+</li>
+</ul><pre><code>&lt;div id="lightning-main"&gt;
+  &lt;h1&gt;Lightning Touch&lt;/h1&gt;
+  &lt;h2&gt;Awesomeness!&lt;/h2&gt;
+  &lt;a href="awesome.html" data-target-id="awesome"&gt;Tap for Lightning Touch!&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div id="awesome" style="display:none"&gt;
+  &lt;h1&gt;Whoa!&lt;/h1&gt;
+  &lt;h2&gt;That was awesome!&lt;/h2&gt;
+  &lt;a href="main.html" data-target-id="lightning-main"&gt;Go back to main page!&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<ul>
+<li>Indicate the id of your default/main content with a <code>data-default-target-id</code> attribute on the <code>body</code> element.</li>
+</ul><pre><code>&lt;body data-default-target-id="lightning-main"&gt;
+</code></pre>
+
+<p>That's it! You should have some really fast links on touch-enabled devices like iPhones, iPads, Android devices, and Blackberry devices that are not ancient.</p>
+
+<h2>Sites That Use Lightning Touch</h2>
+
+<ul>
+<li><a href="http://m.ucsf.edu/">UCSF Mobile</a></li>
+</ul><h2>Additional Usage Notes</h2>
+
+<h3>Fallback</h3>
+
+<p>Browsers that do not work with Lightning Touch (e.g., Internet Explorer) will go to the URL specified in the <code>href</code> attribute of the anchor as usual. This does mean you need to have your content available in two places. A template engine or other dynamic content generation mechanism can reduce or eliminate the need to repeat the content in two places.</p>
+
+<h3>Reducing Payload</h3>
+
+<p>Every visitor will load all the Lightning Touch-enabled content on every visit. Consider using <a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/">HTML5 offline appcaching</a> to mitigate the network payload.</p>
+
+<h3>Google Analytics</h3>
+
+<p>To track Google Analytics Lightning Touch "page" loads, add an event listener for <code>hashchange</code>:</p>
+
+<pre><code>window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash])}, false);
+</code></pre>
+
+<p>You can use <code>substr()</code> to strip off the hash mark and the prepended slash if you prefer. This is especially useful if your <code>id</code> attributes always correspond to your <code>href</code> values and you would like them to be treated as the same thing by Google Analytics.</p>
+
+<pre><code>window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash.substr(2)])}, false);
+</code></pre>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2012, Regents of the University of California
+All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:</p>
+
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the name of the University of California nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ul><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+<h2>Notes</h2>
+
+<p>Lightning Touch was written by Rich Trott at the <a href="http://library.ucsf.edu">UCSF Library and Center for Knowledge Management</a>.  You can find him on Twitter: <a href="http://twitter.com/trott">@trott</a></p>
+
+<p>Lightning Touch started with a portion of <a href="http://code.google.com/mobile/articles/fast_buttons.html">fastButtons</a> created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Trott">Trott</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
