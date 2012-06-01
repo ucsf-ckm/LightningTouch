@@ -11,7 +11,7 @@ To see it in action, check out the **Sites That Use Lightning Touch** section be
 * In the web page that you wish to make Lightning Touch-enabled, link to the Lightning Touch JS file. For example:
 
 ```
-<script src="/js/LightningTouch-1.0.0.min.js"></script>
+<script src="/js/LightningTouch-1.0.0.min.js" async></script>
 ```
 
 * If your site has consistent header, footer, navigation, or other content that exists in its own block element, you can leave that stuff alone and it will appear on all the pages that result from Lightning Touch.
