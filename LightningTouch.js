@@ -166,7 +166,7 @@
             }
         }
 
-        if (!location.hash) {
+        if ((!location.hash) && (defaultTargetId !== '')) {
             location.hash = '#/' + defaultTargetId;
         }
         showContent(location.hash.substring(2), [defaultTargetId]);
@@ -239,5 +239,9 @@
         window.addEventListener("popstate", this.popHandler, false);
     };
 
-    document.addEventListener('DOMContentLoaded', init, false);
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        init();
+    } else {
+        document.addEventListener('DOMContentLoaded', init, false);
+    }
 }());
