@@ -60,13 +60,27 @@ Every visitor will load all the Lightning Touch-enabled content on every visit. 
 To track Google Analytics Lightning Touch "page" loads, add an event listener for `hashchange`:
 
 ```
-window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash])}, false);
+window.addEventListener('hashchange', 
+    function() {     
+        // Analytics typically fires on page load, so if the hash change is from something
+        // without a hash to the default hash, don't do anything.
+        if (event.oldURL.indexOf('#') !== -1) {
+            _gaq.push(["_trackPageview", window.location.hash])
+        },
+    false);
 ```
 
 You can use `substr()` to strip off the hash mark and the prepended slash if you prefer. This is especially useful if your `id` attributes always correspond to your `href` values and you would like them to be treated as the same thing by Google Analytics.
 
 ```
-window.addEventListener('hashchange', function() { _gaq.push(["_trackPageview", window.location.hash.substr(2)])}, false);
+window.addEventListener('hashchange', 
+    function() {     
+        // Analytics typically fires on page load, so if the hash change is from something
+        // without a hash to the default hash, don't do anything.
+        if (event.oldURL.indexOf('#') !== -1) {
+            _gaq.push(["_trackPageview", window.location.hash.substr(2)])
+        },
+    false);
 ```
 
 ## License
