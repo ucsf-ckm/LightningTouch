@@ -147,7 +147,7 @@
     };
 
     init = function () {
-        var anchors, i;
+        var anchors, i, touchHandler, popHandler;
 
         defaultTargetId = document.body.getAttribute('data-default-target-id') || '';
 
@@ -175,7 +175,7 @@
             return;
         }
 
-        this.touchHandler = function (event) {
+        touchHandler = function (event) {
             var targetId, target, clickedNode, clickedNodeId, state, hide;
             targetId = this.element.getAttribute("data-target-id");
             target = document.getElementById(targetId);
@@ -212,10 +212,11 @@
         anchors = document.getElementsByTagName("a");
         for (i = 0; i < anchors.length; i += 1) {
             if (anchors[i].getAttribute('data-target-id') !== null) {
-                link.push(new LightningTouch(anchors[i], this.touchHandler));
+                link.push(new LightningTouch(anchors[i], touchHandler));
             }
         }
-        this.popHandler = function (event) {
+
+        popHandler = function (event) {
             var state, previousState, hide;
             state = getState();
             if (state) {
@@ -236,7 +237,7 @@
                 showContent(event.state.show, event.state.hide);
             }
         };
-        window.addEventListener("popstate", this.popHandler, false);
+        window.addEventListener("popstate", popHandler, false);
     };
 
     if (document.readyState === "complete" || document.readyState === "interactive") {
