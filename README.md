@@ -7,7 +7,7 @@ To see it in action, check out the **Sites That Use Lightning Touch** section be
 
 ## Using Lightning Touch
 
-* Put `LightningTouch.js` (or better yet, a minified version) in a sensible place on your web server. 
+* Put `LightningTouch.js` in a sensible place on your web server. 
 * In the web page that you wish to make Lightning Touch-enabled, link to the Lightning Touch JS file. For example:
 
 ```
