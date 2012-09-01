@@ -15,47 +15,44 @@
 </script>
 <style>
     body {text-align:center}
-    section {height:180px}
-    section a {background-color:yellow; display:block; width:100%; font-size:2em;}
+    div {background-color:#d3d3d3; height:180px; font-size:2em; margin: 0.5em 0 0 0}
+    h1 {margin:0; font-size:1.5em;}
+    a {background-color:yellow; display:block; width:100%}
+    strong {display:block;}
     #awesome {background-color: #bada55}
     #less-awesome {background-color: #ac1d1c}
-    .inline {display:inline; font-size:1em; background-color:inherit;}
+    .inline {display:inline; background-color:inherit}
 </style>
 
 <body data-default-target-id="lightning-main">
 
-    <header>
-        <a class="inline" href="http://github.com/trott/LightningTouch">LightningTouch project home on GitHub</a>
-    </header>
+    <h1>Lightning Touch Demo</h1>
+    <a class="inline" href="http://github.com/trott/LightningTouch">Go to Project home</a>
 
-    <section>
         <div id="lightning-main">
-            <h1>Lightning Touch</h1>
-            <h2>Awesomeness!</h2>
+            <strong>Lightning Touch</strong>
+            <strong>Awesomeness!</strong>
             <a href="#" data-target-id="awesome">Tap for Lightning&nbsp;Touch!</a>
         </div>
 
         <div id="awesome" style="display:none">
-            <h1>Whoa!</h1>
-            <h2>That was awesome!</h2>
+            <strong>Whoa!</strong>
+            <strong>That was fast!</strong>
             <a href="#" data-target-id="lightning-main">Tap to try Lightning&nbsp;Touch again!</a>
         </div>
-    </section>
 
-    <section>
         <div id="onclick-main">
-            <h1>Onclick listener</h1>
-            <h2>For comparison!</h2>
+            <strong>Onclick listener</strong>
+            <strong>For comparison!</strong>
 
             <a href="#" onclick="swap('less-awesome','onclick-main'); return false;">Tap to compare with onclick listener.</a>
 
         </div>
 
         <div id="less-awesome" style="display:none">
-            <h1>Oooof....</h1>
-            <h2>That was slow.</h2>
+            <strong>Oooof....</strong>
+            <strong>That was slow.</strong>
 
             <a href="#" onclick="swap('onclick-main','less-awesome'); return false;">Tap to reset onclick listener.</a>
 
         </div>
-    </section>
