@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<title>Lightning Touch Test</title>
+<meta name="viewport" content="width=device-width">
+<script src="../LightningTouch.js"></script>
+
+<body data-default-target-id="default">
+    <div id="default">
+        <h1>Default</h1>
+        <p>This should be visible if you come to this page with no hash in the URL.</p>
+        <p><a href="javascript:location.hash = '/hash'; location.reload(true)">Try it with a hash!</a></p>
+    </div>
+    <div id="hash" style="display:none">
+        <h1>You've been hashed</h1>
+        <p>This should be visible only if you come to this page with the correct hash in the URL.</p>
+        <p>The default text should not be visible.</p>
+        <p>This isn't using Lightning Touch for navigation, so the history stuff is broken on this page. Sorry, yo.</p>
+    </div>
