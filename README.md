@@ -3,7 +3,7 @@ Lightning Touch
 
 Lightning Touch makes links responsive without the several hundred millisecond delay typical in a hendheld touchscreen browser.
 
-To see it in action, check out the **Sites That Use Lightning Touch** section below.
+**Demo Page:** [http://trott.github.com/LightningTouch](http://trott.github.com/LightningTouch)
 
 ## Using Lightning Touch
 
