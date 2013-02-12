@@ -222,7 +222,7 @@
             if (state) {
                 showContent(state.show, state.hide);
             }
-            if (event.state) {
+            if (event.state && event.state.hide) {
                 //Retrieve adjacent pages and add our "show" value to their hide values
                 for (i = 0; i < event.state.hide.length; i += 1) {
                     previousState = getState(event.state.hide[i]);
