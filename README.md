@@ -1,7 +1,5 @@
-Lightning Touch
-===============
-
-##Lightning Touch is deprecated!
+Lightning Touch is deprecated!
+==============================
 
 Use <a href="https://github.com/ftlabs/fastclick">FastClick</a> instead
 
