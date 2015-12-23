@@ -1,6 +1,12 @@
 Lightning Touch
 ===============
 
+##Lightning Touch is deprecated!
+
+Use <a href="https://github.com/ftlabs/fastclick">FastClick</a> instead
+
+## And now, for historical interest only, here's what the README used to say:
+
 Lightning Touch makes links responsive without the several hundred millisecond delay typical in a hendheld touchscreen browser.
 
 **Demo Page:** [http://trott.github.com/LightningTouch](http://trott.github.com/LightningTouch)
